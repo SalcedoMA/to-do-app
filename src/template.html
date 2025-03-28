@@ -10,27 +10,33 @@
     <aside class="sidebar">
         <!-- TOP -->
          <div class="sidebar-top">
-             <div class="profile">
+            <div class="profile">
                 <img class="profile-pic" src="./images/profile.jpg" alt="">
                 <h2 class="username">username1</h2>
-             </div>
-                     <div class="create-n-search">
+            </div>
+            <div class="create-n-search">
                 <button type="button" class="new-task" id="new-task">New +</button>
+                <dialog class="task-create-ops">
+                    <div class="dialog-content">
+                        <button type="button" id="task-dial-button">New task +</button>
+                        <button type="button" id="category-dial-button">New category +</button>
+                    </div>
+                </dialog>
                 <div class="search-box">
                     <img src="./images/magglass.svg" alt="">
                     <input type="search" class="search-bar" id="search-bar" placeholder="Search task...">
                 </div>
-                     </div>
+            </div>
                      <!-- INBOX -->
-                     <div class="inbox">
+            <div class="inbox">
                 <h2 class="section-title"><img src="./images/inbox.svg" alt=""> All To-do's <button type="button" class="dropdown-button"><img src="./images/arrowdown.svg" alt=""></button></h2>
                 <ul class="category-dropdown">
                     <li class="category-item">
-                        <input type="checkbox" class="filters" id="category">
+                        <input type="checkbox" class="filters" id="inbox-category">
                         <label for="category">Category</label>
                     </li>
                     <li class="category-item">
-                        <input type="checkbox" class="filters" id="creation">
+                        <input type="checkbox" class="filters" id="inbox-creation">
                         <label for="creation">Creation</label>
                         <div class="filter-dropdown">
                             <select class="filter-options" id="creation-filters">
@@ -40,7 +46,7 @@
                         </div>
                     </li>
                     <li class="category-item">
-                        <input type="checkbox" class="filters" id="due-date">
+                        <input type="checkbox" class="filters" id="inbox-due-date">
                         <label for="due-date">Due date</label>
                         <div class="filter-dropdown">
                             <select class="filter-options" id="due-date-filters">
@@ -50,7 +56,7 @@
                         </div>
                     </li>
                     <li class="category-item">
-                        <input type="checkbox" class="filters" id="priority">
+                        <input type="checkbox" class="filters" id="inbox-priority">
                         <label for="priority">Priority</label>
                         <div class="filter-dropdown">
                             <select class="filter-options" id="priority-filters">
@@ -59,85 +65,71 @@
                             </select>
                         </div>
                     </li>
-                    <li class="category-item"><input type="checkbox" class="filters" id="completed"><label for="completed"> Completed</label></li>
+                    <li class="category-item"><input type="checkbox" class="filters" id="inbox-completed"><label for="completed"> Completed</label></li>
                 </ul>
-                     </div>
+            </div>
          </div>
         <div class="categories-container">
             <!-- CATEGORY 1 -->
             <div class="category">
-                <h2 class="section-title"><img src="./images/inventory.svg" alt=""> Family <button type="button" class="dropdown-button"><img src="./images/arrowdown.svg" alt=""></button></h2>
+                <h2 class="section-title"><img src="./images/inventory.svg" alt=""> Placeholder <button type="button" class="dropdown-button"><img src="./images/arrowdown.svg" alt=""></button></h2>
                 <ul class="category-dropdown">
-                    <li class="category-item">Track wife</li>
-                    <li class="category-item">Hire P.I.</li>
-                    <li class="category-item">Junior's baseball game</li>
+                    <li class="category-item">To-do 1</li>
+                    <li class="category-item">To-do 2</li>
+                    <li class="category-item">To-do 3</li>
                 </ul>
             </div>
             <!-- CATEGORY 2 -->
-            <div class="category">
-                <h2 class="section-title"><img src="./images/inventory.svg" alt=""> Unicycle <button type="button" class="dropdown-button"><img src="./images/arrowdown.svg" alt=""></button>   </h2>
-                <ul class="category-dropdown">
-                    <li class="category-item">Buy unicycle</li>
-                    <li class="category-item">Learn how to use</li>
-                    <li class="category-item">Buy better life insurance</li>
-                    <li class="category-item">FInd place to practice</li>
-                </ul>
-            </div>
         </div>
         <h1 class="sidebar-title">My To-do's</h1>
 
     </aside>
     <!-- MAIN -->
     <main>
+        <!-- FORMS -->
+        <!-- NEW TASK FORM -->
+         <dialog class="task-form-container">
+            <div class="dialog-content">
+                <form action="POST" id="new-task-form">
+                    <legend id="legend">Add new task:</legend>
+                    <div id="title-container">
+                        <label for="title">Title:</label>
+                        <input type="text" id="title" name="title" required>
+                    </div>
+                    <div id="description-container">
+                        <label for="description">Description:</label>
+                        <textarea type="description" id="description" name="description" required></textarea>
+                    </div>
+                    <div id="due-date-container">
+                        <label for="due-date">Due:</label>
+                        <input type="date" id="due-date" name="due-date">
+                    </div>
+                    <div id="category-container">
+                        <label for="category">Category:</label>
+                        <select id="category" name="category">
+                            <option>test</option>
+                        </select>
+                    </div>
+                    <button type="submit" id="task-submit">Create task</button>
+                    <button type="button" id="task-close">Cancel</button>
+                </form>
+            </div>
+         </dialog>
+         <!-- NEW CATEGORY FORM -->
+         <dialog class="category-form-container">
+            <div class="dialog-content">
+                <form action="POST" id="new-category-form">
+                    <legend class="legend">Create a new category:</legend>
+                    <div id="cat-container">
+                        <label for="category-name">Category name:</label>
+                        <input type="text" id="category-name" name="category-name" required>
+                    </div>
+                    <button type="submit" id="category-submit">Add category</button>
+                    <button type="button" id="category-close">Cancel</button>
+                </form>
+            </div>
+         </dialog>
         <!-- CARDS -->
-        <div class="todo-card">
-            <div class="todo-info">
-                <div class="todo-header">
-                    <h2 class="todo-title">Buy unicycle</h2>
-                    <p class="todo-duedate">Due: 29/03</p>
-                </div>
-                <p class="todo-description">I'm buying a unicycle to fulfill my childhood dream</p>
-            </div>
-            <div class="todo-footer">
-                <h3 class="todo-category">#Unicycle</h3>
-                <div class="todo-actions">
-                    <button type="button" class="action-button"><img src="./images/edit.svg" alt=""></img></button>
-                    <button type="button" class="action-button"><img src="./images/delete.svg" alt=""></img></button>
-                </div>
-            </div>
-        </div>
-        <div class="todo-card">
-            <div class="todo-info">
-                <div class="todo-header">
-                    <h2 class="todo-title">Learn how to use unicycle</h2>
-                    <p class="todo-duedate"></p>
-                </div>
-                <p class="todo-description">Look for resources online or classes in person</p>
-            </div>
-            <div class="todo-footer">
-                <h3 class="todo-category">#Unicycle</h3>
-                <div class="todo-actions">
-                    <button type="button" class="action-button"><img src="./images/edit.svg" alt=""></img></button>
-                    <button type="button" class="action-button"><img src="./images/delete.svg" alt=""></img></button>
-                </div>
-            </div>
-        </div>
-        <div class="todo-card">
-            <div class="todo-info">
-                <div class="todo-header">
-                    <h2 class="todo-title">Track wife</h2>
-                    <p class="todo-duedate">Due: 03/03</p>
-                </div>
-                <p class="todo-description">Find out where my wife is going after work</p>
-            </div>
-            <div class="todo-footer">
-                <h3 class="todo-category">#Family</h3>
-                <div class="todo-actions">
-                    <button type="button" class="action-button"><img src="./images/edit.svg" alt=""></img></button>
-                    <button type="button" class="action-button"><img src="./images/delete.svg" alt=""></img></button>
-                </div>
-            </div>
-        </div>
         <!-- FILLER CARDS -->
         <div class="todo-card">
             <div class="todo-info">
