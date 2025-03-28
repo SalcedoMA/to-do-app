@@ -1,14 +1,12 @@
 import { newTask, newCategory } from "./newtask-buttons";
+import { userTasks, categories, DisplayTasks, DisplayCategories } from "./insert-new-items";
 
-const task = {}
-const userTasks = [];
-const categories = [];
-
-// 1. Get the form elements
+// localStorage.setItem('categories', "[]");
 const taskForm = document.getElementById('new-task-form');
 const categoryForm = document.getElementById('new-category-form');
 
 function addNewTask(event) {
+    const task = {}
     Array.from(taskForm.elements).forEach(element => {
         if (element.name) { // Only store elements with IDs
           task[element.name] = element.value;
@@ -25,6 +23,9 @@ function addNewTask(event) {
 taskForm.addEventListener('submit', function(event) {
     event.preventDefault();
     addNewTask();
+    DisplayTasks.render()
+    localStorage.setItem('tasks', JSON.stringify(userTasks));
+
 });
 
 function addNewCategory(event) {
@@ -40,4 +41,9 @@ function addNewCategory(event) {
 categoryForm.addEventListener('submit', function(event) {
     event.preventDefault();
     addNewCategory();
+    DisplayCategories.render();
+    localStorage.setItem('categories', JSON.stringify(categories));
+
 });
+
+export { userTasks, categories };
