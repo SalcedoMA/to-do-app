@@ -30,54 +30,58 @@
                      <!-- INBOX -->
             <div class="inbox">
                 <h2 class="section-title"><img src="./images/inbox.svg" alt=""> All To-do's <button type="button" class="dropdown-button"><img src="./images/arrowdown.svg" alt=""></button></h2>
-                <ul class="category-dropdown">
-                    <li class="category-item">
-                        <input type="checkbox" class="filters" id="inbox-category">
-                        <label for="category">Category</label>
-                    </li>
-                    <li class="category-item">
-                        <input type="checkbox" class="filters" id="inbox-creation">
-                        <label for="creation">Creation</label>
-                        <div class="filter-dropdown">
-                            <select class="filter-options" id="creation-filters">
-                                <option value="newest">Newest</option>
-                                <option value="oldest">Oldest</option>
-                            </select>
-                        </div>
-                    </li>
-                    <li class="category-item">
-                        <input type="checkbox" class="filters" id="inbox-due-date">
-                        <label for="due-date">Due date</label>
-                        <div class="filter-dropdown">
-                            <select class="filter-options" id="due-date-filters">
-                                <option value="soonest">Soonest</option>
-                                <option value="latest">There's still time...</option>
-                            </select>
-                        </div>
-                    </li>
-                    <li class="category-item">
-                        <input type="checkbox" class="filters" id="inbox-priority">
-                        <label for="priority">Priority</label>
-                        <div class="filter-dropdown">
-                            <select class="filter-options" id="priority-filters">
-                                <option value="high">High</option>
-                                <option value="low">Low</option>
-                            </select>
-                        </div>
-                    </li>
-                    <li class="category-item"><input type="checkbox" class="filters" id="inbox-completed"><label for="completed"> Completed</label></li>
-                </ul>
+                <div class="dropdown-wrapper">
+                    <ul class="category-dropdown">
+                        <li class="category-item">
+                            <input type="checkbox" class="filters" id="inbox-category">
+                            <label for="inbox-category">Category</label>
+                        </li>
+                        <li class="category-item">
+                            <input type="checkbox" class="filters" id="inbox-creation">
+                            <label for="inbox-creation">Creation</label>
+                            <div class="filter-dropdown">
+                                <select class="filter-options" id="creation-filters">
+                                    <option value="newest">Newest</option>
+                                    <option value="oldest">Oldest</option>
+                                </select>
+                            </div>
+                        </li>
+                        <li class="category-item">
+                            <input type="checkbox" class="filters" id="inbox-due-date">
+                            <label for="inbox-due-date">Due date</label>
+                            <div class="filter-dropdown">
+                                <select class="filter-options" id="due-date-filters">
+                                    <option value="soonest">Soonest</option>
+                                    <option value="latest">There's still time...</option>
+                                </select>
+                            </div>
+                        </li>
+                        <li class="category-item">
+                            <input type="checkbox" class="filters" id="inbox-priority">
+                            <label for="inbox-priority">Priority</label>
+                            <div class="filter-dropdown">
+                                <select class="filter-options" id="priority-filters">
+                                    <option value="high">High</option>
+                                    <option value="low">Low</option>
+                                </select>
+                            </div>
+                        </li>
+                        <li class="category-item"><input type="checkbox" class="filters" id="inbox-completed"><label for="inbox-completed"> Completed</label></li>
+                    </ul>
+                </div>
             </div>
          </div>
         <div class="categories-container">
             <!-- CATEGORY 1 -->
             <div class="category">
                 <h2 class="section-title"><img src="./images/inventory.svg" alt=""> Placeholder <button type="button" class="dropdown-button"><img src="./images/arrowdown.svg" alt=""></button></h2>
-                <ul class="category-dropdown">
-                    <li class="category-item">To-do 1</li>
-                    <li class="category-item">To-do 2</li>
-                    <li class="category-item">To-do 3</li>
-                </ul>
+                <div class="dropdown-wrapper">
+                    <ul class="category-dropdown">
+                        <li class="category-item">To-do 1</li>
+                        <li class="category-item">To-do 2</li>
+                        <li class="category-item">To-do 3</li>
+                    </ul>
+                </div>
             </div>
             <!-- CATEGORY 2 -->
         </div>
