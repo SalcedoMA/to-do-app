@@ -1,0 +1,43 @@
+import { newTask, newCategory } from "./newtask-buttons";
+
+const task = {}
+const userTasks = [];
+const categories = [];
+
+// 1. Get the form elements
+const taskForm = document.getElementById('new-task-form');
+const categoryForm = document.getElementById('new-category-form');
+
+function addNewTask(event) {
+    Array.from(taskForm.elements).forEach(element => {
+        if (element.name) { // Only store elements with IDs
+          task[element.name] = element.value;
+        }
+      });
+      userTasks.push(task);
+      // Log the object (or use it as needed)
+      console.log('Stored Data:', task);
+      console.log(userTasks)
+      taskForm.reset();
+      newTask.taskFormContainer.close();   
+}
+
+taskForm.addEventListener('submit', function(event) {
+    event.preventDefault();
+    addNewTask();
+});
+
+function addNewCategory(event) {
+    const categoryName = document.getElementById('category-name').value;
+    categories.push(categoryName);
+    // Log the object (or use it as needed)
+    console.log('Stored Data:', categoryName);
+    console.log(categories)
+    categoryForm.reset();
+    newCategory.categoryFormContainer.close();   
+}
+
+categoryForm.addEventListener('submit', function(event) {
+    event.preventDefault();
+    addNewCategory();
+});
