@@ -1,3 +1,5 @@
 import "./styles.css";
+import { createDialog, newTask, newCategory } from "./newtask-buttons";
+import { addNewTask } from "./newForm";
 
-console.log("its working");
+const body = document.querySelector("body");
