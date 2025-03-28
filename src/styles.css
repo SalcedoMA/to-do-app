@@ -46,6 +46,7 @@ body {
     gap: 2rem;
 }
 
+/* PROFILE */
 .profile {
     display: flex;
     align-items: center;
@@ -54,8 +55,9 @@ body {
 }
 
 .profile-pic {
-    width: 3rem;
+    width: 3.5rem;
     border-radius: 50%;
+    border: 2px solid var(--accent-color);
 }
 
 .username {
@@ -63,6 +65,7 @@ body {
     font-size: 1.25rem;
 }
 
+/* NEW TASK BUTTON AND SEARCH BAR */
 .create-n-search {
     position: relative;
     display: flex;
@@ -152,7 +155,7 @@ body {
     gap: 2rem;
 }
 
-.categories-container:hover, .inbox:hover {
+.category:hover, .inbox:hover {
     background-color: rgb(248, 248, 248);
 }
 
@@ -163,6 +166,8 @@ body {
     align-items: flex-start;
     gap: 0.25rem;
     padding: 0.75rem 1.5rem;
+    text-overflow: ellipsis;
+    overflow: hidden;
 }
 
 .section-title:hover {
@@ -183,6 +188,7 @@ body {
     border: none;
 }
 
+/* DROPDOWN MENUS AND DROPDOWN TRANSITION */
 .dropdown-wrapper {
     display: grid;
     grid-template-rows: 0fr;
@@ -191,10 +197,11 @@ body {
 
 .dropdown-wrapper.is-open {
     grid-template-rows: 1fr;
+    padding-bottom: 1rem;
   }
 
 .category-dropdown {
-    padding: 0.25rem 2rem;
+    /* padding: 0.25rem 2rem; */
     margin-left: 1.25rem;
     list-style-position: inside;
     list-style:square;
@@ -202,8 +209,13 @@ body {
     overflow: hidden;
 }
 
+.inbox .category-item {
+    list-style: none;
+    margin-left: 1.25rem;
+}
+
 .category-item {
-    margin: 0.30rem;
+    margin: 0.30rem 2.25rem;
     font-size: 1.20rem;
 }
 
@@ -227,10 +239,17 @@ body {
 
 /* MAIN */
 main {
+    display: flex;
+    justify-content: center;
+}
+
+.todo-container {
+    width: 100%;
     padding: 1.5rem;
     display: flex;
     flex-wrap: wrap;
     gap: 1rem;
+    /* row-gap: 1rem; */
 }
 
 /* CARDS */
@@ -257,6 +276,21 @@ main {
 .todo-header {
     height: 5rem;
 }
+
+.todo-title {
+    max-width: 20ch;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    max-height: 3.5rem;
+    line-height: 100%;
+    margin-bottom: 0.25rem;
+}
+
+.todo-description {
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
 
 .todo-footer {
     display: flex;
