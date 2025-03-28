@@ -152,6 +152,10 @@ body {
     gap: 2rem;
 }
 
+.categories-container:hover, .inbox:hover {
+    background-color: rgb(248, 248, 248);
+}
+
 .section-title {
     font-size: 1.35rem;
     font-weight: 500;
@@ -162,7 +166,6 @@ body {
 }
 
 .section-title:hover {
-    background-color: rgb(248, 248, 248);
     color: var(--fifth-color);
 }
 
@@ -180,13 +183,23 @@ body {
     border: none;
 }
 
+.dropdown-wrapper {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 0.25s ease-out;
+}
+
+.dropdown-wrapper.is-open {
+    grid-template-rows: 1fr;
+  }
+
 .category-dropdown {
     padding: 0.25rem 2rem;
     margin-left: 1.25rem;
     list-style-position: inside;
     list-style:square;
     line-height: 110%;
-    display: none;
+    overflow: hidden;
 }
 
 .category-item {
