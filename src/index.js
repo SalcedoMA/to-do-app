@@ -1,9 +1,8 @@
 import "./styles.css";
+import"./store-new-elements.js";
 import { createDialog, newTask, newCategory } from "./newtask-buttons";
-import { addNewTask } from "./newForm";
-import { DisplayTasks, DisplayCategories } from "./insert-new-items";
+import { DisplayElements } from "./render-elements.js";
 
 
 const body = document.querySelector("body");
-DisplayTasks.render();
-DisplayCategories.render();
+DisplayElements.renderAll();
