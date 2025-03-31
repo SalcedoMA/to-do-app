@@ -1,12 +1,14 @@
-
-function expandDropwdowns() {
+function expandDropdowns() {
     const dropdownButtons = document.querySelectorAll(".dropdown-button");
-    for (let button of dropdownButtons) {
-        const wrapper = button.closest("div").querySelector(".dropdown-wrapper")
-        button.addEventListener("click", () => {
-            wrapper.classList.toggle("is-open");
-        })
-    }
-}
+    const dropdownWrappers = document.querySelectorAll(".dropdown-wrapper");
+    
+    dropdownButtons.forEach((button, i) => {
+      button.addEventListener("click", () => {
+        button.classList.toggle("rotated");
+        dropdownWrappers[i].classList.toggle("is-open");
+      });
+    });
+  }
 
-export { expandDropwdowns };
+
+export { expandDropdowns };
